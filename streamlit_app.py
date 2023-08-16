@@ -24,7 +24,9 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
-streamlit.text(fruityvice_response)
-
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
+
+#New Section to display fruityvice api response
+streamlit.header('Fruityvice Fruit Advice!')
+streatlit.text(fruityvice_response.json())
