@@ -29,4 +29,4 @@ streamlit.dataframe(fruits_to_show)
 
 #New Section to display fruityvice api response
 streamlit.header('Fruityvice Fruit Advice!')
-streatlit.text(fruityvice_response.json())
+#streatlit.text(fruityvice_response.json())
