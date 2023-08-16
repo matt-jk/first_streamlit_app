@@ -3,9 +3,6 @@ import streamlit
 import pandas as pd
 import requests
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-
-
 my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -28,8 +25,9 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 #New Section to display fruityvice api response
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 streamlit.header('Fruityvice Fruit Advice!')
-streamlit.text(fruityvice_response.json()) #just writes the data to the screen
+#streamlit.text(fruityvice_response.json()) #just writes the data to the screen
 
 # write your own comment -what does the next line do? 
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
