@@ -44,10 +44,10 @@ my_cur = my_cnx.cursor()
 #my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 my_data_rows = my_cur.fetchall()
-streamlit.header("The fruit load list contains!!!:")
+streamlit.header("The fruit load list contains (typo):")
 streamlit.dataframe(my_data_rows)
 
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfruit')
 streamlit.write('The user entered',add_my_fruit)
 
-my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('from streamlit')")
+my_cur.execute("insert into pc_rivery_db.public.fruit_load_listz values ('from streamlit')")
